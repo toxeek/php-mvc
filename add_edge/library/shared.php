@@ -28,10 +28,10 @@ function init() {
     $action = $urlArray[0];
     if (isset($action) && !empty($action)) {
         if (trim($action) == 'insert') {
-            $page_str = 'Add edges';
+            $page_str = 'Add CDN node';
         }
         elseif (trim($action) == 'delete') {
-            $page_str = 'Delete edges';
+            $page_str = 'Delete CDN node';
         }
         else {
             $page_str = htmlentities($action);
@@ -56,7 +56,7 @@ function init() {
             call_user_func(array($dispatch,$action));
         }
     } else {
-            header('Location: http://nagios01.priv.yospace.net/add_edge/add');
+            header('Location: http://company.com/add_cdn_node/add');
     }
 
 
@@ -73,7 +73,7 @@ function __autoload($className) {
 
         else {
             if (DEVELOPMENT_ENVIRONMENT === true) {
-                header('Location: http://nagios01.priv.yospace.net/add_edge/autoload_class_error');
+                header('Location: http://company.com/add_cdn_node/autoload_class_error');
             }
             else {
                 echo "HTTP/1.1 400 Bad Request";
