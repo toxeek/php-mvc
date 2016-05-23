@@ -55,7 +55,7 @@ if($data['isComplete']){
     }
 
     echo "<br/>DONE.<br/>";
-    echo '<a href="http://company.com/add_edge/add/insert">Go Back &lt;&lt;</a>';
+    echo '<a href="http://company.com/add_cdn_node/add/insert">Go Back &lt;&lt;</a>';
     fclose($file_handle);
 }
 
