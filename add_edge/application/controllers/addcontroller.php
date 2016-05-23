@@ -37,17 +37,16 @@ if($data['isComplete']){
     $files = $data['data']['files'][0];
     $file_handle = fopen("$files", "r");
     // while (!feof($file_handle)) {
+    // Nagiosql related schema
     while (($line = fgets($file_handle)) !== false) {
-    	# Tara should just create a file with edge names (e.g: csm-57-eur3) each separated by a new line, so just a one column file 
-        // $line = fgets($file_handle);
         $edge_alias = str_replace($alias_chrs, " ",rtrim($line));
         echo "[+] processing: $line<br/>";
 		$this->Add->query("INSERT INTO tbl_host(host_name,alias,address,check_command,notes_url,config_id) values (:host_name,:alias,:address,:check_command,:notes_url,:config_id)");
 		$this->Add->bind(':host_name',rtrim($line));
 		$this->Add->bind(':alias', $edge_alias);
-		$this->Add->bind(':address', rtrim($line).'.cds1.yospace.com');
+		$this->Add->bind(':address', rtrim($line).'.cdn.company.com');
 		$this->Add->bind(':check_command', '17!5666');
-		$this->Add->bind(':notes_url', '/support/index.php/cds-csm-edge-servers.html');
+		$this->Add->bind(':notes_url', '/path/index.php/company-cdn-servers.html');
 		$this->Add->bind(':config_id', 4);
 
 		$this->Add->execute();
@@ -56,7 +55,7 @@ if($data['isComplete']){
     }
 
     echo "<br/>DONE.<br/>";
-    echo '<a href="http://nagios01.priv.yospace.net/add_edge/add/insert">Go Back &lt;&lt;</a>';
+    echo '<a href="http://company.com/add_edge/add/insert">Go Back &lt;&lt;</a>';
     fclose($file_handle);
 }
 
