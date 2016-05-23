@@ -38,7 +38,7 @@ if($data['isComplete']){
     $file_handle = fopen("$files", "r");
     // while (!feof($file_handle)) {
     while (($line = fgets($file_handle)) !== false) {
-        # Tara should just create a file with edge names (e.g: csm-57-eur3) each separated by a new line, so just a one column file 
+        // Nagiosql related schema 
         echo "[+] processing: $line<br/>";
         $this->Remove->query("DELETE FROM tbl_host WHERE host_name = :host_name AND config_id = :config_id");
         $this->Remove->bind(':host_name',rtrim($line));
@@ -50,7 +50,7 @@ if($data['isComplete']){
     }
 
     echo "<br/>DONE.<br/>";
-    echo '<a href="http://nagios01.priv.yospace.net/add_edge/add/insert">Go Back &lt;&lt;</a>';
+    echo '<a href="http://company.com/add_edge/add/insert">Go Back &lt;&lt;</a>';
     fclose($file_handle);
 }
 
