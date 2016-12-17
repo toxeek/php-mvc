@@ -26,6 +26,7 @@
         </div>
         <!-- new comment as test -->
         <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- another test comment -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
                 <li <?php if ($_pgheader == 'AddController') { echo 'class="active"'; } ?>><a href="http://example.com/add_cdn_node/add/insert">add edges</a></li>
