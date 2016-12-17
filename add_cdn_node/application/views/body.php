@@ -24,6 +24,7 @@
             </button>
             <a class="navbar-brand" href="http://example.com/add_cdn_node/add/insert">Yospace</a>
         </div>
+        <!-- new comment as test -->
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
